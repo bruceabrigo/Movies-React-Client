@@ -2,6 +2,7 @@ import './App.css';
 import api from "./api/apiConfig";
 import Layout from './components/Layout';
 import Home from './components/home/Home';
+import Header from './components/header/Header';
 import {useState, useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 
@@ -32,10 +33,10 @@ function App() {
 
   return (
     <div className="App">
-
+      <Header />
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route path='/' element={<Home />}> </Route>
+          <Route path='/' element={<Home movies={movies}/>}> </Route>
         </Route>
       </Routes>
 
